@@ -17,6 +17,7 @@ A library for audio recording at foreground.
 
 ## Example
 
+<img src="screenshots/Screenshot1.png" height="200" />
 
 <br/>
 
