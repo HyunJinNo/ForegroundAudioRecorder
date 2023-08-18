@@ -63,4 +63,20 @@ class AudioService : Service() {
     override fun onBind(intent: Intent?): IBinder? {
         return null
     }
+
+    fun stopAudioService() {
+        Toast.makeText(this, "AudioService finished.", Toast.LENGTH_SHORT).show()
+
+        if (AudioRecorder.recordingState != RecordingState.ON_RECORDING) {
+            Toast.makeText(this, "Recording stopped.", Toast.LENGTH_SHORT).show()
+            AudioTimer.stopTimer()
+            AudioRecorder.stopRecording()
+        }
+
+        audioReceiver?.let {
+            unregisterReceiver(it)
+        }
+        
+        stopSelf()
+    }
 }
