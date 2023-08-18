@@ -20,6 +20,7 @@
         android:layout_height="34dp"
         android:layout_marginEnd="42dp"
         android:background="@drawable/round_button"
-        android:foreground="@drawable/baseline_fiber_manual_record_24" />
+        android:foreground="@drawable/baseline_fiber_manual_record_24"
+        android:foregroundTint="#E53935" />
 
 </LinearLayout>
