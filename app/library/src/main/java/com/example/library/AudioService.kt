@@ -49,11 +49,10 @@ class AudioService : Service() {
         super.onDestroy()
         Toast.makeText(this, "AudioService finished.", Toast.LENGTH_SHORT).show()
 
-        if (AudioRecorder.recordingState != RecordingState.ON_RECORDING) {
+        if (AudioRecorder.recordingState != RecordingState.BEFORE_RECORDING) {
             Toast.makeText(this, "Recording stopped.", Toast.LENGTH_SHORT).show()
             AudioTimer.stopTimer()
             AudioRecorder.stopRecording()
-            stopForeground(STOP_FOREGROUND_REMOVE)
         }
 
         audioReceiver?.let {
