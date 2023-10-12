@@ -33,7 +33,7 @@ To get this library into your build:
 
 Add it in your settings.gradle at the end of repositories:
 
-```
+```gradle
 repositories {
     ...
     maven { url 'https://jitpack.io' }
@@ -44,7 +44,7 @@ repositories {
 
 Add it in your build.gradle (:app):
 
-```
+```gradle
 dependencies {
     ...
     implementation 'com.github.HyunJinNo:ForegroundAudioRecorder:0.0:3'
@@ -57,7 +57,7 @@ dependencies {
 
 #### Step 1. Add the following permissions to your AndroidManifest.xml.
 
-```
+```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -73,7 +73,7 @@ dependencies {
 
 #### Step 2. Request permissions before calling startService() method.
 
-```
+```kotlin
 class MainActivity : AppCompatActivity() {
     private var permissions: Array<String> = arrayOf(
         Manifest.permission.RECORD_AUDIO,
@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
 
 #### Step 3. After the permissions granted, call startService() method.
 
-```
+```kotlin
 val intent = Intent(applicationContext, AudioService::class.java)
 startService(intent)
 ```
@@ -120,7 +120,7 @@ startService(intent)
 
 If you call stopService() method during audio recording, a recorded audio file is automatically created.
 
-```
+```kotlin
 val intent = Intent(applicationContext, AudioService::class.java)
 stopService(intent)
 ```
